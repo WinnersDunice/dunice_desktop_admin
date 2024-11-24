@@ -18,6 +18,7 @@ private:
     QString _firstName = nullptr, _secondName = nullptr, _lastName = nullptr;
     QString _login = nullptr;
     QString _password = nullptr;
+    QString _officeID = nullptr;
     Q_OBJECT
 
 public:

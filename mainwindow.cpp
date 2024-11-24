@@ -7,12 +7,27 @@
 #include <string.h>
 #include <sstream>
 #include <QThread>
+#include <QLineEdit>
+#include <QRegularExpressionValidator>
+#include <QRegularExpression>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    //Запрещаем кракозябры в поле ФИО
+    QRegularExpression FCS("^[a-zA-Zа-яА-ЯёЁ ]+$");
+    QRegularExpressionValidator *validatorFCS = new QRegularExpressionValidator(FCS, ui->FCS_FIELD);
+    ui->FCS_FIELD->setValidator(validatorFCS);
+
+    //Запрещаем кракозябры в поле id
+    QRegularExpression IDF("^[0-9]+$");
+    QRegularExpressionValidator *validatorIDF = new QRegularExpressionValidator(IDF, ui->ID_FIELD);
+    ui->ID_FIELD->setValidator(validatorIDF);
+
+
 }
 
 MainWindow::~MainWindow()
@@ -20,34 +35,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_PUSH_BUTTON_clicked()
-{
-
-}
-
-
-void MainWindow::on_FCS_FIELD_textChanged(const QString &arg1)
-{
-
-}
-
-
-void MainWindow::on_LOGIN_FIELD_textChanged(const QString &arg1)
-{
-
-}
-
-
-void MainWindow::on_PASSWORD_FIELD_textChanged(const QString &arg1)
-{
-
-}
-
-
 void MainWindow::on_PUSH_BUTTON_pressed()
 {
     _password = ui->PASSWORD_FIELD->text();
     _login = ui->LOGIN_FIELD->text();
+    _officeID = ui->ID_FIELD->text();
 
     QString _name = ui->FCS_FIELD->text();
     std::wistringstream iss(_name.toStdWString());
@@ -73,17 +65,19 @@ void MainWindow::on_PUSH_BUTTON_pressed()
         data.push_back(_lastName);
         data.push_back(_login);
         data.push_back(_password);
+        data.push_back(_officeID);
         data.push_back(ID);
 
         try
         {
-            DataSender sender("https://api.dunicewinners.ru/reg");
+            DataSender sender("https://api.dunicewinners.ru/register");
             sender.sendData(data);
 
             ui->MESSEGE_LABEL->setText("Регистрация успешна");
             ui->LOGIN_FIELD->setText("");
             ui->PASSWORD_FIELD->setText("");
             ui->FCS_FIELD->setText("");
+            ui->ID_FIELD->setText("");
 
         }
         catch(QString& err)
@@ -107,3 +101,7 @@ void MainWindow::on_PUSH_BUTTON_pressed()
     }
 }
 
+void MainWindow::on_PUSH_BUTTON_clicked(){}
+void MainWindow::on_FCS_FIELD_textChanged(const QString &arg1){}
+void MainWindow::on_LOGIN_FIELD_textChanged(const QString &arg1){}
+void MainWindow::on_PASSWORD_FIELD_textChanged(const QString &arg1){}

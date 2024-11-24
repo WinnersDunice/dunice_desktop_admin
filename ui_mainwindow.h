@@ -33,9 +33,9 @@ public:
     QLineEdit *LOGIN_FIELD;
     QLineEdit *PASSWORD_FIELD;
     QPushButton *PUSH_BUTTON;
-    QLabel *ERROR_SENDER;
     QLabel *IBSDUNICW_ICON;
     QLabel *MESSEGE_LABEL;
+    QLineEdit *ID_FIELD;
     QMenuBar *menubar;
     QMenu *menu;
     QStatusBar *statusbar;
@@ -188,7 +188,7 @@ public:
         FACE_GROUPGOX->setPalette(palette1);
         FCS_FIELD = new QLineEdit(FACE_GROUPGOX);
         FCS_FIELD->setObjectName("FCS_FIELD");
-        FCS_FIELD->setGeometry(QRect(100, 100, 300, 31));
+        FCS_FIELD->setGeometry(QRect(100, 80, 300, 31));
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette2.setBrush(QPalette::Active, QPalette::Button, brush15);
@@ -250,7 +250,7 @@ public:
         FCS_FIELD->setAlignment(Qt::AlignmentFlag::AlignCenter);
         LOGIN_FIELD = new QLineEdit(FACE_GROUPGOX);
         LOGIN_FIELD->setObjectName("LOGIN_FIELD");
-        LOGIN_FIELD->setGeometry(QRect(100, 140, 300, 30));
+        LOGIN_FIELD->setGeometry(QRect(100, 120, 300, 30));
         QPalette palette3;
         palette3.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette3.setBrush(QPalette::Active, QPalette::Button, brush15);
@@ -303,7 +303,7 @@ public:
         LOGIN_FIELD->setAlignment(Qt::AlignmentFlag::AlignCenter);
         PASSWORD_FIELD = new QLineEdit(FACE_GROUPGOX);
         PASSWORD_FIELD->setObjectName("PASSWORD_FIELD");
-        PASSWORD_FIELD->setGeometry(QRect(100, 190, 300, 30));
+        PASSWORD_FIELD->setGeometry(QRect(100, 210, 300, 30));
         QPalette palette4;
         palette4.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette4.setBrush(QPalette::Active, QPalette::Button, brush1);
@@ -361,7 +361,7 @@ public:
         PASSWORD_FIELD->setAlignment(Qt::AlignmentFlag::AlignCenter);
         PUSH_BUTTON = new QPushButton(FACE_GROUPGOX);
         PUSH_BUTTON->setObjectName("PUSH_BUTTON");
-        PUSH_BUTTON->setGeometry(QRect(180, 240, 140, 40));
+        PUSH_BUTTON->setGeometry(QRect(180, 250, 140, 40));
         QPalette palette5;
         palette5.setBrush(QPalette::Active, QPalette::WindowText, brush);
         QBrush brush19(QColor(170, 170, 170, 255));
@@ -431,19 +431,71 @@ public:
         font2.setKerning(true);
         PUSH_BUTTON->setFont(font2);
         PUSH_BUTTON->setAutoRepeat(false);
-        ERROR_SENDER = new QLabel(FACE_GROUPGOX);
-        ERROR_SENDER->setObjectName("ERROR_SENDER");
-        ERROR_SENDER->setGeometry(QRect(170, 270, 151, 20));
         IBSDUNICW_ICON = new QLabel(FACE_GROUPGOX);
         IBSDUNICW_ICON->setObjectName("IBSDUNICW_ICON");
-        IBSDUNICW_ICON->setGeometry(QRect(190, 29, 120, 62));
+        IBSDUNICW_ICON->setGeometry(QRect(190, 15, 120, 62));
         IBSDUNICW_ICON->setPixmap(QPixmap(QString::fromUtf8(":/icons/icons/BigIcon.png")));
         IBSDUNICW_ICON->setScaledContents(true);
         IBSDUNICW_ICON->setAlignment(Qt::AlignmentFlag::AlignCenter);
         MESSEGE_LABEL = new QLabel(FACE_GROUPGOX);
         MESSEGE_LABEL->setObjectName("MESSEGE_LABEL");
-        MESSEGE_LABEL->setGeometry(QRect(100, 290, 300, 20));
+        MESSEGE_LABEL->setGeometry(QRect(100, 295, 300, 20));
         MESSEGE_LABEL->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        ID_FIELD = new QLineEdit(FACE_GROUPGOX);
+        ID_FIELD->setObjectName("ID_FIELD");
+        ID_FIELD->setGeometry(QRect(100, 160, 300, 30));
+        QPalette palette6;
+        palette6.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette6.setBrush(QPalette::Active, QPalette::Button, brush1);
+        palette6.setBrush(QPalette::Active, QPalette::Light, brush2);
+        palette6.setBrush(QPalette::Active, QPalette::Midlight, brush3);
+        palette6.setBrush(QPalette::Active, QPalette::Mid, brush4);
+        palette6.setBrush(QPalette::Active, QPalette::Text, brush5);
+        palette6.setBrush(QPalette::Active, QPalette::BrightText, brush6);
+        palette6.setBrush(QPalette::Active, QPalette::ButtonText, brush7);
+        palette6.setBrush(QPalette::Active, QPalette::Base, brush8);
+        palette6.setBrush(QPalette::Active, QPalette::Window, brush16);
+        palette6.setBrush(QPalette::Active, QPalette::Highlight, brush10);
+        palette6.setBrush(QPalette::Active, QPalette::AlternateBase, brush11);
+        palette6.setBrush(QPalette::Active, QPalette::ToolTipText, brush17);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette6.setBrush(QPalette::Active, QPalette::PlaceholderText, brush18);
+#endif
+        palette6.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette6.setBrush(QPalette::Inactive, QPalette::Button, brush1);
+        palette6.setBrush(QPalette::Inactive, QPalette::Light, brush2);
+        palette6.setBrush(QPalette::Inactive, QPalette::Midlight, brush3);
+        palette6.setBrush(QPalette::Inactive, QPalette::Mid, brush4);
+        palette6.setBrush(QPalette::Inactive, QPalette::Text, brush5);
+        palette6.setBrush(QPalette::Inactive, QPalette::BrightText, brush6);
+        palette6.setBrush(QPalette::Inactive, QPalette::ButtonText, brush7);
+        palette6.setBrush(QPalette::Inactive, QPalette::Base, brush8);
+        palette6.setBrush(QPalette::Inactive, QPalette::Window, brush16);
+        palette6.setBrush(QPalette::Inactive, QPalette::Highlight, brush10);
+        palette6.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush11);
+        palette6.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush17);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette6.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush18);
+#endif
+        palette6.setBrush(QPalette::Disabled, QPalette::Button, brush1);
+        palette6.setBrush(QPalette::Disabled, QPalette::Light, brush2);
+        palette6.setBrush(QPalette::Disabled, QPalette::Midlight, brush3);
+        palette6.setBrush(QPalette::Disabled, QPalette::Mid, brush4);
+        palette6.setBrush(QPalette::Disabled, QPalette::BrightText, brush6);
+        palette6.setBrush(QPalette::Disabled, QPalette::Base, brush16);
+        palette6.setBrush(QPalette::Disabled, QPalette::Window, brush16);
+        palette6.setBrush(QPalette::Disabled, QPalette::Highlight, brush14);
+        palette6.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush11);
+        palette6.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush17);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette6.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush18);
+#endif
+        ID_FIELD->setPalette(palette6);
+        ID_FIELD->setFont(font1);
+        ID_FIELD->setFocusPolicy(Qt::FocusPolicy::ClickFocus);
+        ID_FIELD->setInputMethodHints(Qt::InputMethodHint::ImhNone);
+        ID_FIELD->setEchoMode(QLineEdit::EchoMode::Normal);
+        ID_FIELD->setAlignment(Qt::AlignmentFlag::AlignCenter);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -474,9 +526,10 @@ public:
         PASSWORD_FIELD->setText(QString());
         PASSWORD_FIELD->setPlaceholderText(QCoreApplication::translate("MainWindow", "\320\237\320\260\321\200\320\276\320\273\321\214", nullptr));
         PUSH_BUTTON->setText(QCoreApplication::translate("MainWindow", "\320\236\321\202\320\277\321\200\320\260\320\262\320\270\321\202\321\214", nullptr));
-        ERROR_SENDER->setText(QString());
         IBSDUNICW_ICON->setText(QString());
         MESSEGE_LABEL->setText(QString());
+        ID_FIELD->setText(QString());
+        ID_FIELD->setPlaceholderText(QCoreApplication::translate("MainWindow", "ID \320\276\321\204\320\270\321\201\320\260", nullptr));
         menu->setTitle(QString());
     } // retranslateUi
 

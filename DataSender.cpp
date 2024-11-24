@@ -33,7 +33,8 @@ void DataSender::sendData(std::vector<QString> data)
     doc.AddMember("name", Value(converter.to_bytes(data[0].toStdWString()).c_str(), allocator), allocator);
     doc.AddMember("surname", Value(converter.to_bytes(data[2].toStdWString()).c_str(), allocator), allocator);
     doc.AddMember("middlename", Value(converter.to_bytes(data[1].toStdWString()).c_str(), allocator), allocator);
-    doc.AddMember("mac_address", Value(converter.to_bytes(data[5].toStdWString()).c_str(), allocator), allocator);
+    doc.AddMember("officeid", Value(data[5].toInt()), allocator);
+    doc.AddMember("mac_address", Value(converter.to_bytes(data[6].toStdWString()).c_str(), allocator), allocator);
 
     // Генерация JSON строки
     StringBuffer buffer;
