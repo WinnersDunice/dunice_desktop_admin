@@ -120,6 +120,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_resources.cpp debug\qrc_qmake_qmake_qm_files.cpp
 debug/qrc_resources.cpp: ../../resources.qrc \
 		C:/Qt/6.8.0/mingw_64/bin/rcc.exe \
+		../../icons/BigIcon.png \
 		../../icons/icon.png
 	C:\Qt\6.8.0\mingw_64\bin\rcc.exe -name resources --no-zstd ..\..\resources.qrc -o debug\qrc_resources.cpp
 
@@ -329,6 +330,7 @@ debug/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QString \
 		debug/moc_predefs.h \
 		C:/Qt/6.8.0/mingw_64/bin/moc.exe
 	C:\Qt\6.8.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Skrever/Documents/CyberGarden18/duniceDesktopAdmin/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -IC:/Users/Skrever/Documents/CyberGarden18/duniceDesktopAdmin -IC:/Users/Skrever/Documents/CyberGarden18/duniceDesktopAdmin/include -IC:/Users/Skrever/Documents/CyberGarden18/duniceDesktopAdmin/include -IC:/Qt/6.8.0/mingw_64/include -IC:/Qt/6.8.0/mingw_64/include/QtWidgets -IC:/Qt/6.8.0/mingw_64/include/QtGui -IC:/Qt/6.8.0/mingw_64/include/QtNetwork -IC:/Qt/6.8.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -775,6 +777,7 @@ debug/main.o: ../../main.cpp ../../mainwindow.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QString \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QLocale \
@@ -974,13 +977,68 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QString \
+		../../CheckProcessor.h \
+		../../DataSender.h \
+		../../include/rapidjson/rapidjson.h \
+		../../include/rapidjson/msinttypes/stdint.h \
+		../../include/rapidjson/msinttypes/inttypes.h \
+		../../include/rapidjson/writer.h \
+		../../include/rapidjson/stream.h \
+		../../include/rapidjson/encodings.h \
+		../../include/rapidjson/internal/clzll.h \
+		../../include/rapidjson/internal/meta.h \
+		../../include/rapidjson/internal/stack.h \
+		../../include/rapidjson/allocators.h \
+		../../include/rapidjson/internal/swap.h \
+		../../include/rapidjson/internal/strfunc.h \
+		../../include/rapidjson/internal/dtoa.h \
+		../../include/rapidjson/internal/itoa.h \
+		../../include/rapidjson/internal/diyfp.h \
+		../../include/rapidjson/internal/ieee754.h \
+		../../include/rapidjson/stringbuffer.h \
+		../../include/rapidjson/document.h \
+		../../include/rapidjson/reader.h \
+		../../include/rapidjson/encodedstream.h \
+		../../include/rapidjson/memorystream.h \
+		../../include/rapidjson/internal/strtod.h \
+		../../include/rapidjson/internal/biginteger.h \
+		../../include/rapidjson/internal/pow10.h \
+		../../include/rapidjson/error/error.h \
+		../../include/curl/curl.h \
+		../../include/curl/curlver.h \
+		../../include/curl/system.h \
+		../../include/curl/easy.h \
+		../../include/curl/multi.h \
+		../../include/curl/urlapi.h \
+		../../include/curl/options.h \
+		../../include/curl/header.h \
+		../../include/curl/websockets.h \
+		../../include/curl/mprintf.h \
+		../../include/curl/typecheck-gcc.h \
 		ui_mainwindow.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QGroupBox \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgroupbox.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QLabel \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlabel.h \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/qpicture.h \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QLineEdit \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextcursor.h \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextoption.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QMenuBar \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qmenubar.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qmenu.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QStatusBar \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qstatusbar.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget
